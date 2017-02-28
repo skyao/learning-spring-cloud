@@ -1,0 +1,32 @@
+﻿{
+  "gitbook": ">=3.2.0",
+  "description": "Spring Cloud学习笔记",
+  "language": "zh-hans",
+  "author": "Sky Ao <aoxiaojian@gmail.com>",
+  "extension": null,
+  "generator": "site",
+  "links" : {
+    "sidebar" : {
+        "Sky@Gitbook": "https://skyao.gitbooks.io"
+    }
+  },
+  "structure" : {
+        "readme" : "README_gitbook.md"
+    },
+  "plugins": [
+    "toggle-chapters",
+    "edit-link", 
+    "etoc",
+    "back-to-top-button",
+    "tags"
+  ],
+  "pluginsConfig": {
+    "edit-link": {
+        "base": "https://github.com/skyao/leaning-spring-cloud/edit/master",
+        "label": "Edit"
+    }
+  },
+  "title": "Spring Cloud学习笔记",
+  "variables": {
+  }
+}
