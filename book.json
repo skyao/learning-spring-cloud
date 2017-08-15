@@ -22,7 +22,7 @@
   ],
   "pluginsConfig": {
     "edit-link": {
-        "base": "https://github.com/skyao/leaning-spring-cloud/edit/master",
+        "base": "https://github.com/skyao/learning-spring-cloud/edit/master",
         "label": "Edit"
     }
   },
