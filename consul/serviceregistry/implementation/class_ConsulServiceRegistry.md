@@ -1,4 +1,6 @@
-# 类ConsulServiceRegistry
+# 服务注册的实现
+
+服务注册的实现由类 ConsulServiceRegistry 完成。
 
 ## 类定义
 
@@ -6,33 +8,6 @@ ConsulServiceRegistry 是 consul 中实现服务注册的主要类。定义如�
 
 ```java
 public class ConsulServiceRegistry implements ServiceRegistry<ConsulRegistration> {}
-```
-
-先看看类ConsulRegistration的内容。
-
-## 类ConsulRegistration
-
-类ConsulRegistration保存有consul做注册的信息：
-
-```java
-public class ConsulRegistration implements Registration {
-	// 其实就一个consul定义的 NewService 的实例
-	private final NewService service;
-
-	public ConsulRegistration(NewService service) {
-		this.service = service;
-	}
-
-	public String getInstanceId() {
-		return getService().getId();
-	}
-
-	public String getServiceId() {
-    	// serviceId取 NewService 的 name 属性
-        // 对照上面 getInstanceId() 方法，那里返回的是 id 属性
-		return getService().getName();
-	}
-}
 ```
 
 ## ServiceRegistry定义的方法实现
@@ -98,5 +73,26 @@ public void setStatus(ConsulRegistration registration, String status) {
 }
 ```
 
+### getStatus()方法
 
+```java
+public Object getStatus(ConsulRegistration registration) {
+    String serviceId = registration.getServiceId();
+    // 调用ConsulClient获取健康检查的信息
+    Response<List<Check>> response = client.getHealthChecksForService(serviceId, QueryParams.DEFAULT);
+    List<Check> checks = response.getValue();
+
+    for (Check check : checks) {
+        if (check.getServiceId().equals(registration.getInstanceId())) {
+        	//　如果有信息表明当前服务是维护状态，则返回OUT_OF_SERVICE
+            if (check.getName().equalsIgnoreCase("Service Maintenance Mode")) {
+                return OUT_OF_SERVICE.getCode();
+            }
+        }
+    }
+
+	// 否则返回UP
+    return UP.getCode();
+}
+```
 

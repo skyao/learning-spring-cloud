@@ -1,8 +1,8 @@
-# 类ConsulAutoServiceRegistrationAutoConfiguration
+# 服务自动注册的自动装配
 
-## 注解
+服务自动注册的自动装配由类 ConsulAutoServiceRegistrationAutoConfiguration 完成。
 
-类ConsulAutoServiceRegistrationAutoConfiguration 上有一堆注解：
+类 ConsulAutoServiceRegistrationAutoConfiguration 上有一堆注解：
 
 ```java
 @Configuration
@@ -34,7 +34,7 @@ public class ConsulAutoServiceRegistrationAutoConfiguration {}
 
 5. @ConditionalOnProperty(value = "spring.cloud.service-registry.auto-registration.enabled", matchIfMissing = true)
 
-	表明只有配置项 `spring.cloud.service-registry.auto-registration.enabled` 设置为开启才有效，当然如果没有设置则视为true。
+	表明只有配置项 `spring.cloud.service-registry.auto-registration.enabled` 设置为开启才有效，当然如果没有设置则视为true。同样注意这个配置项是 spring cloud 的统一配置，不是 consul 特有的。
 
 6. @AutoConfigureAfter(ConsulServiceRegistryAutoConfiguration.class)
 
@@ -71,9 +71,9 @@ public @interface ConditionalOnConsulEnabled {
 4. 配置项 spring.cloud.consul.enabled 设置为开启
 5. 要有类 ConsulClient 存在
 
-## Bean
+## 自动装配的Bean
 
-### ConsulAutoServiceRegistration
+### bean ConsulAutoServiceRegistration
 
 ```java
 @Bean
@@ -85,7 +85,7 @@ public ConsulAutoServiceRegistration consulAutoServiceRegistration(ConsulService
 
 这个方法在参数中传进来的 ConsulServiceRegistry 和 ConsulDiscoveryProperties 这两个bean都是在 ConsulServiceRegistryAutoConfiguration 里面创建的。所以要通过 `@AutoConfigureAfter(ConsulServiceRegistryAutoConfiguration.class)` 来设置初始化顺序。
 
-### ConsulAutoRegistration
+### bean ConsulAutoRegistration
 
 ```java
 @Bean

@@ -19,7 +19,12 @@
 	* [discovery模块](consul/discovery/index.md)
 		* [自动装配](consul/discovery/autoconfig/index.md)
 	* [serviceregistry模块](consul/serviceregistry/index.md)
-        * [类ConsulAutoServiceRegistrationAutoConfiguration](consul/serviceregistry/class_ConsulAutoServiceRegistrationAutoConfiguration.md)
-        * [类ConsulServiceRegistryAutoConfiguration](consul/serviceregistry/class_ConsulServiceRegistryAutoConfiguration.md)
+		* [自动装配](consul/serviceregistry/autoconfiguration/index.md)
+        	* [服务注册](consul/serviceregistry/autoconfiguration/class_ConsulServiceRegistryAutoConfiguration.md)
+        	* [服务自动注册](consul/serviceregistry/autoconfiguration/class_ConsulAutoServiceRegistrationAutoConfiguration.md)
+        * [实现](consul/serviceregistry/implementation/index.md)
+        	* [类ConsulRegistration](consul/serviceregistry/implementation/class_ConsulRegistration.md)
+        	* [服务注册](consul/servi	ceregistry/implementation/class_ConsulServiceRegistry.md)
+
 
 * [全文标签总览](tags.md)

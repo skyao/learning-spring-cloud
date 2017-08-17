@@ -1,8 +1,10 @@
-# 类ConsulServiceRegistryAutoConfiguration
+# 服务注册的自动装配
+
+服务注册的自动装配由类 ConsulServiceRegistryAutoConfiguration 完成。
 
 ## 自动装配的设置
 
-类ConsulServiceRegistryAutoConfiguration 的定义：
+类 ConsulServiceRegistryAutoConfiguration 的定义：
 
 ```java
 @Configuration
@@ -18,15 +20,15 @@ public class ConsulServiceRegistryAutoConfiguration {}
 2. @ConditionalOnConsulEnabled
 3. @ConditionalOnProperty(value = "spring.cloud.service-registry.enabled", matchIfMissing = true)
 
-	表明需要在配置项 `spring.cloud.service-registry.enabled` 设置为true，或者missing时有效。
+	表明需要在配置项 `spring.cloud.service-registry.enabled` 设置为true，或者missing时有效。注意这是spring cloud的统一配置，不是 consul 特有的。
 
 4. @AutoConfigureBefore(ServiceRegistryAutoConfiguration.class)
 
-	表明在 ServiceRegistryAutoConfiguration 配置完成之前再配置。
+	表明在 ServiceRegistryAutoConfiguration 配置完成之前进行配置。
 
 总结，ConsulServiceRegistryAutoConfiguration 要生效，条件如下：
 
-1. 配置项 `spring.cloud.service-registry.enabled` 设置为开启
+1. 配置项 `spring.cloud.service-registry.enabled` 设置为开启或者missing
 2. 配置项 spring.cloud.consul.enabled 设置为开启
 3. 要有类 ConsulClient 存在
 
