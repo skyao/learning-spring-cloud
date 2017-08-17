@@ -14,7 +14,12 @@
 * [Spring Cloud Config](config/index.md)
 
 * [Spring Cloud Consul](consul/index.md)
-    * [自动装配](consul/autoconfig/index.md)
-        * [类ConsulAutoServiceRegistrationAutoConfiguration](consul/autoconfig/class_ConsulAutoServiceRegistrationAutoConfiguration.md)
+	* [starter总览](consul/starter_overview.md)
+	* [core模块](consul/core/index.md)
+	* [discovery模块](consul/discovery/index.md)
+		* [自动装配](consul/discovery/autoconfig/index.md)
+	* [serviceregistry模块](consul/serviceregistry/index.md)
+        * [类ConsulAutoServiceRegistrationAutoConfiguration](consul/serviceregistry/class_ConsulAutoServiceRegistrationAutoConfiguration.md)
+        * [类ConsulServiceRegistryAutoConfiguration](consul/serviceregistry/class_ConsulServiceRegistryAutoConfiguration.md)
 
 * [全文标签总览](tags.md)
