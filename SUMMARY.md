@@ -24,7 +24,10 @@
         	* [服务自动注册](consul/serviceregistry/autoconfiguration/class_ConsulAutoServiceRegistrationAutoConfiguration.md)
         * [实现](consul/serviceregistry/implementation/index.md)
         	* [类ConsulRegistration](consul/serviceregistry/implementation/class_ConsulRegistration.md)
-        	* [服务注册](consul/servi	ceregistry/implementation/class_ConsulServiceRegistry.md)
+        	* [服务注册](consul/serviceregistry/implementation/class_ConsulServiceRegistry.md)
+        	* [类ConsulAutoRegistration](consul/serviceregistry/implementation/class_ConsulAutoRegistration.md)
+        	* [服务自动注册](consul/serviceregistry/implementation/class_ConsulAutoServiceRegistration.md)
+
 
 
 * [全文标签总览](tags.md)

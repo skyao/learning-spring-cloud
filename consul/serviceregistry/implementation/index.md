@@ -4,10 +4,10 @@
 
 从　AutoConfiguration　的代码实现可以找到对应的服务注册实现类：
 
-| 自动装配的类 |　实现的类(bean)|
-|--------|--------|
-|    ConsulServiceRegistryAutoConfiguration    |　ConsulServiceRegistry |
-|    ConsulAutoServiceRegistrationAutoConfiguration    | ConsulAutoServiceRegistration|
+| 　 |　实现类(bean)| 注册信息　|
+|--------|--------|--------|
+|    服务注册    |　ConsulServiceRegistry | ConsulRegistration |
+|    服务自动注册    | ConsulAutoServiceRegistration| ConsulAutoRegistration |
 
 
 
