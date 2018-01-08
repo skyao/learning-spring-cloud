@@ -11,19 +11,22 @@
     }
   },
   "structure" : {
-        "readme" : "README_gitbook.md"
     },
   "plugins": [
-    "toggle-chapters",
-    "edit-link", 
-    "etoc",
-    "back-to-top-button",
-    "tags"
+    "-search",
+    "-sharing",
+    "edit-link",
+    "github-buttons@2.1.0"
   ],
   "pluginsConfig": {
     "edit-link": {
         "base": "https://github.com/skyao/learning-spring-cloud/edit/master",
         "label": "Edit"
+    },
+    "github-buttons": {
+        "repo": "skyao/learning-spring-cloud",
+        "types": ["star"],
+        "size": "small"
     }
   },
   "title": "Spring Cloud学习笔记",
